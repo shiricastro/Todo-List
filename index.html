@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Todo List</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="http://poca.ro/wp-content/uploads/2016/04/list.png">
+        <link href="https://fonts.googleapis.com/css?family=Lemonada" rel="stylesheet">
+        <link href='main.css' rel='stylesheet' type="text/css">
+    </head>
+    <body ng-app="todoList" ng-controller="listCtrl as list">
+        <h1>My Todo List</h1>
+        <form class="mainTodo">
+            <input ng-model="newTodo" class="mainInput" type="text" placeholder="What nedds to be done ?"/>
+            <button type="submit">➕</button>
+        </form>
+        <ul class="todoList">
+            <li ng-repeat="todo in list.todos">
+                <div class="view">
+                    <input type="checkbox" ng-model="todo.done"/>
+                    <label>{{todo.description}}</label>
+                    <button ng-click="list.deleteTodo()">✖</button>
+                </div>
+                <input class="edit" type="text"/>
+            </li>
+        </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js" type="text/javascript"></script>
+    <script src="script.js" type="text/javascript"></script>
+    </body>
+</html>
