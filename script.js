@@ -8,12 +8,16 @@ function listCtrlFun(){
         {description:"todo number 2", done:false},
         {description:"todo number 3", done:false}
     ];
-    this.addTodo= function(){
-       this.todos.push({description: this.newTodo, done:false});
-       this.newTodo="";
+    console.log(this.todos);
+    this.addTodo = function(){
+        if (this.newTodo) {
+            this.todos.push({description: this.newTodo, done:false});
+            this.newTodo="";
+        }
     };    
-    this.deleteTodo= function(){
-        
+    this.deleteTodo= function(index){
+        console.log("delete function");
+        this.todos.splice(index,1);
     };
 }
 

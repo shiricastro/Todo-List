@@ -11,16 +11,16 @@
     </head>
     <body ng-app="todoList" ng-controller="listCtrl as list">
         <h1>My Todo List</h1>
-        <form class="mainTodo">
-            <input ng-model="newTodo" class="mainInput" type="text" placeholder="What nedds to be done ?"/>
+        <form class="mainTodo" ng-submit="list.addTodo()">
+            <input class="mainInput" type="text"  ng-model="list.newTodo" placeholder="What nedds to be done ?"/>
             <button type="submit">➕</button>
         </form>
         <ul class="todoList">
             <li ng-repeat="todo in list.todos">
                 <div class="view">
                     <input type="checkbox" ng-model="todo.done"/>
-                    <label>{{todo.description}}</label>
-                    <button ng-click="list.deleteTodo()">✖</button>
+                    <label ng-class="{strike:todo.done}">{{todo.description}}</label>
+                    <button ng-click="list.deleteTodo($index)">✖</button>
                 </div>
                 <input class="edit" type="text"/>
             </li>
