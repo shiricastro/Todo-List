@@ -16,7 +16,7 @@
             <button type="submit">➕</button>
         </form>
         <ul class="todoList">
-            <li ng-repeat="todo in list.todos">
+            <li ng-repeat="todo in list.todos" ng-class="{strikeLi:todo.done}">
                 <div class="view">
                     <input type="checkbox" ng-model="todo.done"/>
                     <label ng-class="{strike:todo.done}">{{todo.description}}</label>

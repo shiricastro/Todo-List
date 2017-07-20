@@ -73,13 +73,17 @@ div.view{
 }
 ul.todoList li label {
     //white-space: pre-line;
-    //word-break: break-all;
+    text-align: left;
+    word-break: break-all;
     padding: 15px 60px 15px 15px;
     margin-left: 40px;
     display: block;
     line-height: 1.2;
 }
-
+ul.todoList li:hover,
+ul.todoList li:focus{
+   background-color: #f4f4f4; 
+}
 ul.todoList li input[type="checkbox"]{
     width: 40px;
     position: absolute;
@@ -98,8 +102,12 @@ ul.todoList li button{
     border: none;
     color: purple;
     font-weight: bold;
-    opacity: .6;
+    opacity: 0;
     cursor: pointer;
+}
+ul.todoList li:hover button,
+ul.todoList li:focus button{
+    opacity: .7;
 }
 ul.todoList li button:hover,
 ul.todoList li button:focus{
@@ -107,4 +115,8 @@ ul.todoList li button:focus{
 }
 div.view label.strike{
     text-decoration: line-through;
+    color: rgba(0,0,0,.4);
+}
+ul.todoList li.strikeLi{
+    background-color: #ddd;
 }
