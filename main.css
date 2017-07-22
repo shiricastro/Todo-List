@@ -2,7 +2,13 @@ body{
     padding:0;
     margin:0;
     text-align: center;
-    font-family: 'Lemonada', cursive;   
+    font-family: 'Lemonada', cursive; 
+    background-color: #f7f7f7;
+}
+h1{
+    color:rgba(142, 27, 27,.4);
+    font-size: 3rem;
+    margin-bottom: .3rem;
 }
 input{
     font-family: 'Lemonada', cursive;
@@ -24,6 +30,8 @@ form.mainTodo{
    margin: 0 auto;
    display: flex;
    box-shadow: 0px 0px 6px 3px rgba(230,230,230,1);
+   padding: 5px 0;
+   background-color: white;
 }
 form.mainTodo button{
     border: 0;
@@ -57,8 +65,9 @@ div.container{
     width: 550px;
     max-width: 80%;
     margin: 0 auto;
-    box-shadow: 0px 0px 6px 3px rgba(230,230,230,1);
+    box-shadow: 0px 4px 6px 3px rgba(230,230,230,1);
     box-sizing: border-box;
+    background-color: white;
 }
 div.container div.footer{
     color:#bbb;
@@ -81,6 +90,9 @@ li {
 li:last-child{
     border: none;
 }
+li:first-child{
+     border-top: 1px solid #e6e6e6;   
+}
 
 div.view{
     display: flex;
@@ -95,7 +107,7 @@ ul.todoList li span {
 }
 ul.todoList li.active:hover,
 ul.todoList li.active:focus{
-   background-color: #f4f4f4; 
+   background-color: #f9f9f9; 
 }
 ul.todoList li.editing:hover,
 ul.todoList li.editing:focus{
@@ -117,7 +129,7 @@ ul.todoList li button{
     margin: auto 0;
     background: none;
     border: none;
-    color: purple;
+    color: rgb(142, 27, 27);
     font-weight: bold;
     opacity: 0;
     cursor: pointer;
@@ -135,7 +147,7 @@ div.view span.strike{
     color: rgba(0,0,0,.4);
 }
 ul.todoList li.active.strikeLi{
-    background-color: #ddd;
+    background-color: #f9f9f9;
 }
 ul.todoList li.editing.strikeLi{
     background-color: white;
@@ -149,11 +161,15 @@ li.editing div.view{
 }
 
 
-
+@media(max-width:420px){
+    h1{
+        font-size: 45px;
+    }    
+}
 
 @media(max-width:350px){
     h1{
-        font-size: 25px;
+        font-size: 30px;
     }
     sapn ,input,div{
         font-size: 14px!important;
