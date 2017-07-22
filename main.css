@@ -6,7 +6,7 @@ body{
     background-color: #f7f7f7;
 }
 h1{
-    color:rgba(142, 27, 27,.4);
+    color:rgba(142, 27, 27,.3);
     font-size: 3rem;
     margin-bottom: .3rem;
 }
@@ -74,7 +74,7 @@ div.container div.footer{
 }
 
 li input.edit{
-    width: 90%;
+    width: 80%;
     box-sizing: border-box;
     padding: 10px;
     border: 1px solid #e6e6e6;
@@ -164,17 +164,18 @@ li.editing div.view{
 @media(max-width:420px){
     h1{
         font-size: 45px;
-    }    
-}
-
-@media(max-width:350px){
-    h1{
-        font-size: 30px;
-    }
+    } 
     sapn ,input,div{
         font-size: 14px!important;
     }
     form button{
        font-size: 12px!important; 
     }
+}
+
+@media(max-width:350px){
+    h1{
+        font-size: 30px;
+    }
+
 }
