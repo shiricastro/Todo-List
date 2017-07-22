@@ -97,6 +97,10 @@ ul.todoList li.active:hover,
 ul.todoList li.active:focus{
    background-color: #f4f4f4; 
 }
+ul.todoList li.editing:hover,
+ul.todoList li.editing:focus{
+   background-color: white; 
+}
 ul.todoList li input[type="checkbox"]{
     width: 40px;
     position: absolute;
@@ -133,6 +137,20 @@ div.view span.strike{
 ul.todoList li.active.strikeLi{
     background-color: #ddd;
 }
+ul.todoList li.editing.strikeLi{
+    background-color: white;
+}
+
+li.editing input.edit{
+    display: block;
+}
+li.editing div.view{
+    display: none;
+}
+
+
+
+
 @media(max-width:350px){
     h1{
         font-size: 25px;
