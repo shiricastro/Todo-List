@@ -11,14 +11,11 @@
     </head>
     <body ng-app="todoList" ng-controller="listCtrl as list">
         <h1>My Todo List</h1>
-        <form class="mainTodo" ng-submit="list.addTodo()">
-            <input class="mainInput" type="text"  ng-model="list.newTodo" placeholder="What nedds to be done ?"/>
-            <button type="submit">➕</button>
-        </form>
+        <new-todo fromdata="list.todos"></new-todo>
         
         <div class="container">
             <ul class="todoList">
-                <todo-list data="list.todos"></todo-list>
+                <todo-item data="list.todos"></todo-item>
             </ul>
             <div class="footer">Tasks: <span>{{list.todos.length}}</span></div>
         </div>

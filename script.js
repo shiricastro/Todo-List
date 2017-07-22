@@ -1,23 +1,34 @@
 var app = angular.module('todoList',[]);
 app.controller('listCtrl',listCtrlFun);
 
-function listCtrlFun(){
-    this.newTodo="";
-    
+function listCtrlFun(){   
     this.todos=[
         {description:"todo number 1", done:false},
         {description:"todo number 2", done:false},
         {description:"todo number 3", done:false}
     ];
     console.log(this.todos);
-    this.addTodo = function(){
-        if (this.newTodo) {
-            this.todos.push({description: this.newTodo, done:false});
-            this.newTodo="";
-        }
-    }; 
+ 
 }
-app.component('todoList',{
+app.component('newTodo',{
+    template:`<form class="mainTodo" ng-submit="newTodo.addTodo()">
+                <input class="mainInput" type="text"  ng-model="newTodo.newTodo" placeholder="What nedds to be done ?"/>
+                <button type="submit">➕</button>
+            </form>`,
+    bindings:{fromdata:"="},
+    controller:function(){
+        this.newTodo="";
+        
+        this.addTodo = function(){
+            if (this.newTodo) {
+                this.fromdata.push({description: this.newTodo, done:false});
+                this.newTodo="";
+            }
+        };
+    },
+    controllerAs:"newTodo"    
+});
+app.component('todoItem',{
     template:`<li class="active" ng-repeat="todo in item.data" ng-class="{strikeLi:todo.done}">
                     <div class="view" >
                         <input type="checkbox" ng-model="todo.done" />
@@ -34,7 +45,6 @@ app.component('todoList',{
         this.edit=function(e){
             var value = e.target.textContent;
             angular.element((event.target).closest('li')).toggleClass('editing');
-            console.log(angular.element((event.target).closest('div.view')).next());
             angular.element((event.target).closest('div.view')).next().val(value);
         };
         this.save = function(e,index){
