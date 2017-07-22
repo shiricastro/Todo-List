@@ -3,6 +3,7 @@ app.controller('listCtrl',listCtrlFun);
 
 function listCtrlFun(){
     this.newTodo="";
+    
     this.todos=[
         {description:"todo number 1", done:false},
         {description:"todo number 2", done:false},
@@ -15,19 +16,18 @@ function listCtrlFun(){
             this.newTodo="";
         }
     }; 
-
 }
 app.component('todoList',{
     template:`<li class="active" ng-repeat="todo in item.data" ng-class="{strikeLi:todo.done}">
                     <div class="view" >
                         <input type="checkbox" ng-model="todo.done" />
-                        <span ng-class="{strike:todo.done}" ng-dblclick="item.edit($event,$index)">{{todo.description}}</span>
+                        <span ng-class="{strike:todo.done}" ng-click="item.edit($event,$index)" >{{todo.description}}</span>
                         <button ng-click="item.deleteTodo($index)">✖</button>
                     </div>
                     <input class="edit" type="text" name="edit" ng-keyup="$event.keyCode == 13 ? item.save($event,$index) : null">
                 </li>`,
     bindings:{data:"="},
-    controller:function($element){   
+    controller:function($element){
         this.deleteTodo= function(index){
             this.data.splice(index,1);
         }; 

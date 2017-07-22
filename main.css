@@ -2,8 +2,7 @@ body{
     padding:0;
     margin:0;
     text-align: center;
-    font-family: 'Lemonada', cursive;
-    
+    font-family: 'Lemonada', cursive;   
 }
 input{
     font-family: 'Lemonada', cursive;
@@ -84,7 +83,6 @@ li:last-child{
 }
 
 div.view{
-
     display: flex;
 }
 ul.todoList li span {
@@ -134,4 +132,15 @@ div.view span.strike{
 }
 ul.todoList li.active.strikeLi{
     background-color: #ddd;
+}
+@media(max-width:350px){
+    h1{
+        font-size: 25px;
+    }
+    sapn ,input,div{
+        font-size: 14px!important;
+    }
+    form button{
+       font-size: 12px!important; 
+    }
 }
