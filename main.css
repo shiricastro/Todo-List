@@ -80,7 +80,7 @@ li input.edit{
     border: 1px solid #e6e6e6;
     background-color: inherit;
     margin: 5px auto;
-    display: none;
+
 }
 li {
     position: relative;
@@ -109,10 +109,7 @@ ul.todoList li.active:hover,
 ul.todoList li.active:focus{
    background-color: #f9f9f9; 
 }
-ul.todoList li.editing:hover,
-ul.todoList li.editing:focus{
-   background-color: white; 
-}
+
 ul.todoList li input[type="checkbox"]{
     width: 40px;
     position: absolute;
@@ -149,16 +146,7 @@ div.view span.strike{
 ul.todoList li.active.strikeLi{
     background-color: #f9f9f9;
 }
-ul.todoList li.editing.strikeLi{
-    background-color: white;
-}
 
-li.editing input.edit{
-    display: block;
-}
-li.editing div.view{
-    display: none;
-}
 
 
 @media(max-width:420px){
