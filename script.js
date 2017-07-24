@@ -56,11 +56,9 @@ app.component('todoItem',{
         }; 
         this.turnOnEditMode= function(index){
             this.data[index].editMode = true;
-            console.log(this.data);
         };
         this.turnOffEditMode= function(index){
             this.data[index].editMode = false;
-            console.log(this.data);
         };        
     },
     controllerAs:"item"
