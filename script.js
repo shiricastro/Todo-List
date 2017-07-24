@@ -41,13 +41,13 @@ app.component('todoList',{
 });
 
 app.component('todoItem',{
-    template:`<li class="active" ng-repeat="todo in item.data" ng-class="{strikeLi:todo.done}">
-                    <div class="view" ng-show="!todo.editMode">
+    template:`<li class="active" ng-repeat="todo in item.data" ng-class="{strikeLi:todo.done ,editing: todo.editMode }">
+                    <div class="view">
                         <input type="checkbox" ng-model="todo.done" />
                         <span ng-class="{strike:todo.done}" ng-click="item.turnOnEditMode($index)" >{{todo.description}}</span>
                         <button ng-click="item.deleteTodo($index)">✖</button>
                     </div>
-                    <input class="edit" type="text" ng-show="todo.editMode" ng-model="todo.description" name="edit" ng-keyup="$event.keyCode == 13 ? item.turnOffEditMode($index) : null" ng-blur="item.turnOffEditMode($index)">
+                    <input class="edit" type="text" ng-model="todo.description" name="edit" ng-keyup="$event.keyCode == 13 ? item.turnOffEditMode($index) : null" ng-blur="item.turnOffEditMode($index)">
                 </li>`,
     bindings:{data:"="},
     controller:function(){
@@ -59,7 +59,7 @@ app.component('todoItem',{
         };
         this.turnOffEditMode= function(index){
             this.data[index].editMode = false;
-        };        
+        };  
     },
     controllerAs:"item"
 });

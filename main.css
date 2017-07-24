@@ -73,14 +73,14 @@ div.container div.footer{
     color:#bbb;
 }
 
-li input.edit{
+.edit{
     width: 80%;
     box-sizing: border-box;
     padding: 10px;
     border: 1px solid #e6e6e6;
     background-color: inherit;
     margin: 5px auto;
-
+    display: none;
 }
 li {
     position: relative;
@@ -94,7 +94,7 @@ li:first-child{
      border-top: 1px solid #e6e6e6;   
 }
 
-div.view{
+.view{
     display: flex;
 }
 ul.todoList li span {
@@ -109,7 +109,10 @@ ul.todoList li.active:hover,
 ul.todoList li.active:focus{
    background-color: #f9f9f9; 
 }
-
+ul.todoList li.editing:hover,
+ul.todoList li.editing:focus{
+   background-color: white; 
+}
 ul.todoList li input[type="checkbox"]{
     width: 40px;
     position: absolute;
@@ -146,7 +149,17 @@ div.view span.strike{
 ul.todoList li.active.strikeLi{
     background-color: #f9f9f9;
 }
+ul.todoList editing.strikeLi{
+    background-color: white;
+}
 
+li.editing .edit{
+    display: block;
+    
+}
+li.editing .view{
+    display: none;
+}
 
 
 @media(max-width:420px){
